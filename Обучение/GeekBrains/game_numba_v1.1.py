@@ -6,7 +6,11 @@ player_try_count = input(Fore.GREEN + 'Введите желаемое коли�
 player_range_count = input(Fore.GREEN + 'Введите диапазон чисел. \n' + Style.RESET_ALL)
 
 while True:
-    if player_try_count.isdigit() and player_range_count.isdigit():
+    if player_try_count == 'exit' or player_try_count == 'выход':
+        exit()
+    elif player_range_count == 'exit' or player_range_count == 'выход':
+        exit()
+    elif player_try_count.isdigit() and player_range_count.isdigit():
         break
     else:
         print(Fore.RED + 'Введи целое число. И только его. Давай по новой...\n' + Style.RESET_ALL)
@@ -18,7 +22,10 @@ pc_random_try = random.randrange(0, int(player_range_count))
 
 for i in range(int(player_try_count)):
     player_try = input('Введите число \n')
-    if not player_try.isdigit():
+    if player_try == 'exit' or player_try == 'выход':
+        print(Fore.CYAN + 'Победа достаётся только упорным!' + Style.RESET_ALL)
+        exit()
+    elif not player_try.isdigit():
         print(Fore.RED + 'Вводи только целые числа. Кстати у тебя осталось ' + Style.RESET_ALL + Fore.YELLOW
               + f'{int(player_try_count) - i - 1}' + Style.RESET_ALL + Fore.RED + ' попыток! ;)' + Style.RESET_ALL)
         i = + 1
