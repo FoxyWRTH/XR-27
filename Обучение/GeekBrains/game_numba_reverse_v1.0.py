@@ -52,5 +52,4 @@ for i in range(1, int(pc_try_count) + 2):
         print('Внесите корректировку, используйте "<" и ">" для корректировки диапазона.')
         correction = input()  # Внесение флага корректировки.
         generate_memory = pc_generate_number  # Первичное запоминания сгенерированного числа.
-        i = + 1
         pc_try_end += 1

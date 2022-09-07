@@ -24,13 +24,10 @@ for i in range(int(player_try_count)):
         exit()
     elif not player_try.isdigit():
         print(f'Вводи только целые числа. Кстати у тебя осталось {int(player_try_count) - i - 1} попыток! ;)')
-        i = + 1
     elif int(player_try) == pc_random_try:
         print(f'Ты победил бля! Всего то за {i} попыток!')
         break
     elif int(player_try) > pc_random_try:
         print(f'Ты ввел больше чем нужно, у тебя осталось {int(player_try_count) - i - 1} попыток.')
-        i = + 1
     elif int(player_try) < pc_random_try:
         print(f'Ты ввел меньше чем нужно, у тебя осталось {int(player_try_count) - i - 1} попыток.')
-        i = + 1
