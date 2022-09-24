@@ -12,7 +12,7 @@ with open('music_serialize_in.pickle', 'wb') as work_file:
     pickle.dump(some_data, work_file)
 
 # Чтение.
-with open('music_serialize_in.json', 'r') as work_file:
+with open('music_serialize_in.json', 'r', encoding='utf-8') as work_file:
     load_data = json.load(work_file)
 
 with open('music_serialize_in.pickle', 'rb') as work_file:

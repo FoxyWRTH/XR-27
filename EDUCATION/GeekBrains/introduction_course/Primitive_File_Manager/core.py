@@ -16,17 +16,21 @@ def create_new_folder(name):
         print('Такая папка уже существует.')
 
 
-# Функция На запрос списка содержимого директории. Если использовать параметр "True" Будет выведен список только папок.
+# Функция На запрос списка содержимого директории. Если использовать параметр
+# "True" Будет выведен список только папок.
+
 def get_list(folders_only=False):
     result = os.listdir()
     if folders_only:
-        result = [i for i in result if os.path.isdir(i)]  # os.isdir() - проверка: является ли папкой.
+        result = [i for i in result if os.path.isdir(
+            i)]  # os.isdir() - проверка: является ли папкой.
     print(result)
 
 
 def delete_file_or_folder(name):
     try:
-        if os.path.isdir(name):  # Именно так выглядит проверка, является ли объект папкой!
+        if os.path.isdir(
+                name):  # Проверка, является ли объект папкой!
             os.rmdir(name)
         else:
             os.remove(name)
@@ -58,6 +62,5 @@ def save_info(message):
 def change_dir(name):
     os.chdir(name)
     print(os.getcwd())
-
 
 # if __name__ == '__main__':

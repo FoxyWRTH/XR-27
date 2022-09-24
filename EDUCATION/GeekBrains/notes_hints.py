@@ -1,4 +1,3 @@
-import copy
 import math
 import random
 
@@ -23,7 +22,7 @@ print(result_v2, 'result_v2')
 
 # Задача 2.
 
-some_generate_list = [random.randint(-10, 10) for i in range(1, 20)]
+some_generate_list = [random.randint(-10, 10) for _ in range(1, 20)]
 print(some_generate_list)
 
 upd_generate_list = []
@@ -40,7 +39,6 @@ print(result_v3, 'Result_v3')
 
 # Задача 3.
 
-# another_list = [random.randint(-10, 10) for i in range(1, 20)]
 another_list = [1, -3, 4, 32, 12, -122, 43]
 
 
@@ -80,10 +78,9 @@ print(editing_numbers(another_list), 'RESURECTA! ТЕРНАРНЫЙ ОПЕРАТ
 def task_4(elementus):
     if elementus < 1 or elementus > 100:
         raise ValueError('Not in Range 1-100')
-    elif elementus == 13:
+    if elementus == 13:
         raise ValueError('Oh fuck!')
-    else:
-        return elementus ** 2
+    return elementus ** 2
 
 
 print(task_4(random.randint(1, 100)))
