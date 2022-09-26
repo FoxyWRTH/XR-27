@@ -3,7 +3,8 @@ import pickle
 
 some_data = {'name': 'Rammstein',
              'tracks': ['Angel', 'Sonne', 'My heart brent'],
-             'P.S': ['Fuck you!', 'All what you do is right!', 'Не сдавайся.', 'I Hate you!']}
+             'P.S': ['Fuck you!', 'All what you do is right!',
+                     'Не сдавайся.', 'I Hate you!']}
 # Запись.
 with open('music_serialize_in.json', 'w', encoding='utf-8') as work_file:
     json.dump(some_data, work_file)
