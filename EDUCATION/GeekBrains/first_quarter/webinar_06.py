@@ -26,9 +26,10 @@ path_to_file = 'C:/Users/FXR-34/Desktop/nginx_logs.txt'
 ip = []
 with open(path_to_file, 'r', encoding='utf-8') as work_file:
     for line in work_file:
-        remote_addr = (re.split('"| - - | ', line)[0],)
-        request_type = (re.split('"| - - | ', line)[4],)
-        requested_resource = (re.split('"| - - | ', line)[5],)
+        separator = '"| - - | '
+        remote_addr = (re.split(separator, line)[0],)
+        request_type = (re.split(separator, line)[4],)
+        requested_resource = (re.split(separator, line)[5],)
         print(f'{remote_addr}'
               f'{request_type}'
               f'{requested_resource}'
