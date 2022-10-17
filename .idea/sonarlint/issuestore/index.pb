@@ -21,3 +21,5 @@ b
 0EDUCATION/GeekBrains/first_quarter/webinar_02.py,5\e\5e0488aa2a00f0737480ec22543e5eb070307c36
 `
 0EDUCATION/GeekBrains/first_quarter/webinar_05.py,8\9\896889ceb74ca651ecb1c7a2e3d25a41b1655daf
+`
+0EDUCATION/GeekBrains/first_quarter/webinar_06.py,e\9\e9b712bb7fb9223e1f4c47c128183ae0c522f8fd

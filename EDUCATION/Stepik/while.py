@@ -220,3 +220,47 @@ print(input()[1])
 # Напишите программу, которая определяет,
 # состоит ли указанное число из одинаковых цифр.
 
+input_number = int(input())
+element_list = []
+
+while input_number != 0:  # В этом блоке просто наполняю список.
+    last_number = input_number % 10
+    element_list.append(last_number)
+    input_number = input_number // 10
+
+element_list = set(element_list)  # Делаю множество отсекая повторения.
+
+print('YES' if len(element_list) <= 1 else 'NO')  # Если длина разница False
+
+# Значительно более удачное решение:
+# Тут выполнено в виде сравнения большего и меньшего.
+# Только у числа с одинаковыми цифрами большее и меньшее будет совпадать.
+# В иных случаях показатели будут разниться.
+# Но тут не используется цикл "while", что не совсем отражает суть урока.
+
+num = str(input())  # Этот метод сработает только с типом "Строка"
+comparison_1, comparison_2 = max(num), min(num)
+if comparison_1 == comparison_2:
+    print('YES')
+else:
+    print('NO')
+
+# Дано натуральное число.
+#
+# Напишите программу, которая определяет:
+# Является ли последовательность его цифр при просмотре справа налево
+# упорядоченной по не убыванию.
+
+# Хитрость тут заключается в том что список набранный из цифр, сравнивается с
+# упорядоченным вариантом этого списка.
+
+
+input_number = int(input())
+element_list = []
+
+while input_number != 0:
+    last_number = input_number % 10
+    element_list.append(last_number)
+    input_number = input_number // 10
+
+print('YES' if element_list == sorted(element_list) else 'NO')
