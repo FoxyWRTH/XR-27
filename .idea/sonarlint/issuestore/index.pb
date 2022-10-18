@@ -1,6 +1,4 @@
 
-Q
-!EDUCATION/My_Firs_Site/index.html,7\a\7ab1b033c1aaaa38f658c8b221cd428ab57f8361
 w
 GEDUCATION/GeekBrains/introduction_course/Modules/education_Module_01.py,a\8\a8714a4ac5a60f6ffd3ce56f726b59399282276e
 w
