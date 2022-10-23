@@ -23,3 +23,5 @@ b
 0EDUCATION/GeekBrains/first_quarter/webinar_06.py,e\9\e9b712bb7fb9223e1f4c47c128183ae0c522f8fd
 Q
 !EDUCATION/My_Firs_Site/index.html,7\a\7ab1b033c1aaaa38f658c8b221cd428ab57f8361
+I
+EDUCATION/Stepik/while.py,8\9\895c802e86c60292758680a3fbfb4990fbc6e7d1
