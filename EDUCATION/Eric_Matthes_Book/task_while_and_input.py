@@ -91,3 +91,77 @@ while True:
     else:
         print('Something wrong, check the number what you write...')
     WELCOME_SPEECH = 'Something else?\n'
+
+print('\nTask 6\n')
+
+# Сэндвичи. (7.8)
+# Создайте список с именем sandwich_orders, заполните его названиями различных
+# видов сэндвичей. Создайте пустой список с именем finished_sandwiches. В цикле
+# переберите элементы первого списка и выведите сообщение для каждого элемента
+# (например, «I made your tuna sandwich»). После этого каждый сэндвич из первого
+# списка перемещается в список finished_sandwiches. После того как все элементы
+# первого списка будут обработаны, выведите сообщение с перечислением
+# всех изготовленных сэндвичей.
+
+sandwich_orders = ['tanos', 'eros', 'juli', 'bread_and_meat']
+finished_sandwiches = []
+
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop()
+    print(f'«I made your "{current_sandwich.title()}" sandwich»')
+    finished_sandwiches.append(current_sandwich)
+
+for i in finished_sandwiches:
+    print(f'Your "{i.title()}" sandwich is ready!')
+
+print('\nTask 7\n')
+
+# Без пастрами (7.9)
+# используя список sandwich_orders из упражнения 7.8,
+# проследите за тем, чтобы значение 'pastrami' встречалось в списке как
+# минимум три раза. Добавьте в начало программы код для вывода сообщения о
+# том, что пастрами больше нет, и напишите цикл while для удаления всех
+# вхождений 'pastrami' из sandwich_orders. Убедитесь в том, что в
+# finished_sandwiches значение 'pastrami' не встречается ни одного раза.
+
+sandwich_orders_2 = ['tanos', 'eros', 'juli', 'bread_and_meat', 'eros',
+                     'tanos', 'eros', 'juli', 'eros', 'eros']
+
+print('"Eros" sandwich is over. bruh...')
+
+while 'eros' in sandwich_orders_2:
+    sandwich_orders_2.remove('eros')
+
+print('Now all I have to do is...')
+
+for i in sandwich_orders_2:
+    print(i.title(), end=' - ')
+
+print('\nTask 8\n')
+
+# Отпуск мечты. (7.10)
+# Напишите программу, которая опрашивает пользователей, где бы они
+# хотели провести отпуск. Включите блок кода для вывода результатов опроса.
+# Я сделал по другому. Потому что у меня нет сил мечтать за других...
+
+responses = {}
+INTERVIEW = True
+
+while INTERVIEW:
+    key = input('Enter you Name, unit.\n')
+    while key == '':
+        key = input('I repeat, enter you Name, unit.\n')
+    value = input('Enter your Data, unit.\n')
+    while value == '':
+        value = input('I repeat, Enter your Data, unit.\n')
+
+    responses[key] = value  # Вот так выглядит присвоение к словарю. Запомни.
+
+    repeat = input('Continue, or stop?\n')
+    if repeat == 'stop':
+        INTERVIEW = False
+
+for key, value in responses.items():
+    print(f'Key - {key}, Value - {value}')
+
+print('\nTask 9\n')
