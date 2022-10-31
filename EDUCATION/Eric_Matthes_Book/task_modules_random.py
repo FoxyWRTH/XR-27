@@ -62,7 +62,7 @@ another_element = [84, 'V9', 43, 'L2', 32, 'S14', 54, 'K5', 'D5', 43]
 element_list = [84, 'V9', 43, 'L2', 32, 'S14', 54, 'K5', 'D5', 43]
 win_list = []
 
-for i in range(0, 4):
+for i in range(0, 5):
     win_list.append(random.choice(element_list))
 
 print(f'\n{win_list}'
@@ -81,7 +81,7 @@ for _ in range(0, 10):
     COUNTER = 0
     while True:
         my_ticket = []
-        for i in range(0, 4):
+        for i in range(0, 5):
             my_ticket.append(random.choice(element_list))
         COUNTER += 1
         if my_ticket == win_list:
@@ -93,4 +93,5 @@ print(f'\nКоличество элементов для подбора: {len(wi
       f'Количество замеров: {len(TRY_COUNT)}\n'
       f'Среднее количество попыток: {round(statistics.mean(TRY_COUNT))}'
       f'\n'
-      f'Список затраченных попыток: \n{TRY_COUNT}')
+      f'Список затраченных попыток: \n{TRY_COUNT}\n'
+      f'Общее количество попыток: {sum(TRY_COUNT)}')
