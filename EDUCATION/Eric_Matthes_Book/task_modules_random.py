@@ -2,6 +2,7 @@
 Задачи из книги. --Глава 9. Модули
 """
 import random
+import statistics
 
 
 # Кубики (9.13)
@@ -42,13 +43,13 @@ cube_6 = Die()
 cube_10 = Die()
 cube_20 = Die()
 
-for _ in range(0, 10):
+for _ in range(0, 3):
     cube_6.roll_die_6()
 
-for _ in range(0, 10):
+for _ in range(0, 3):
     cube_10.roll_die_10()
 
-for _ in range(0, 10):
+for _ in range(0, 3):
     cube_20.roll_die_20()
 
 # Лотерея. (9.14)
@@ -58,13 +59,13 @@ for _ in range(0, 10):
 # цифр или букв, является выигрышным.
 
 another_element = [84, 'V9', 43, 'L2', 32, 'S14', 54, 'K5', 'D5', 43]
-element_list = ['C1', 12, 'S14', 54]
+element_list = [84, 'V9', 43, 'L2', 32, 'S14', 54, 'K5', 'D5', 43]
 win_list = []
 
 for i in range(0, 4):
     win_list.append(random.choice(element_list))
 
-print(f'{win_list}'
+print(f'\n{win_list}'
       f'\nSo, if your ticket have that combination you are the WINNER!')
 
 # Анализ лотереи. (9.15)
@@ -74,16 +75,22 @@ print(f'{win_list}'
 # не выпадет выигрышная комбинация. Выведите сообщение с информацией о том,
 # сколько выполнений цикла понадобилось для получения выигрышной комбинации.
 
-COUNTER = 0
-while True:
-    my_ticket = []
-    for i in range(0, 4):
-        my_ticket.append(random.choice(element_list))
-    COUNTER += 1
-    print(f'Win Elements - {win_list}')
-    print(f'My Ticket - {my_ticket}')
-    if my_ticket == win_list:
-        break
-    my_ticket.clear()
+TRY_COUNT = []
 
-print(f'Spent attempts: {COUNTER}')
+for _ in range(0, 10):
+    COUNTER = 0
+    while True:
+        my_ticket = []
+        for i in range(0, 4):
+            my_ticket.append(random.choice(element_list))
+        COUNTER += 1
+        if my_ticket == win_list:
+            break
+        my_ticket.clear()
+    TRY_COUNT.append(COUNTER)
+
+print(f'\nКоличество элементов для подбора: {len(win_list)}\n'
+      f'Количество замеров: {len(TRY_COUNT)}\n'
+      f'Среднее количество попыток: {round(statistics.mean(TRY_COUNT))}'
+      f'\n'
+      f'Список затраченных попыток: \n{TRY_COUNT}')

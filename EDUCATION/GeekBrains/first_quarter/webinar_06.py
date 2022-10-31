@@ -8,7 +8,8 @@ import re
 # Task - 1/2
 # 1. Не используя библиотеки для парсинга, распарсить
 # (получить определённые данные) файл логов web-сервера nginx_logs.txt
-# получить список кортежей (<remote_addr>, <request_type>, <requested_resource>)
+# получить список кортежей
+# (<remote_addr>, <request_type>, <requested_resource>)
 # Например:
 # [
 # ...
