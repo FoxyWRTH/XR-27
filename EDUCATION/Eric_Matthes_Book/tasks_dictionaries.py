@@ -158,7 +158,7 @@ favorite_places = {
     }
 }
 
-for key, value in favorite_places.items():
+for _key, value in favorite_places.items():
     for name, place in value.items():
         print(f'Name: {name.title()}')
         for i in place:
@@ -245,13 +245,13 @@ for key, value in cities.items():
 
 alien_swarm = []
 
-for yellow_alien in range(5):  # Заполнение списка словарями.
+for _yellow_alien in range(5):  # Заполнение списка словарями.
     black_alien = {'color': 'black',
                    'health': '50',
                    'points': '10'}
     alien_swarm.append(black_alien)
 
-for yellow_alien in range(5):  # Заполнение списка словарями.
+for _yellow_alien in range(5):  # Заполнение списка словарями.
     pink_alien = {'color': 'pink',
                   'health': '10',
                   'points': '75'}

@@ -4,6 +4,8 @@
 import random
 import statistics
 
+secure_random = random.SystemRandom()
+
 
 # Кубики (9.13)
 # Создайте класс Die с одним атрибутом sides, который имеет значение
@@ -25,17 +27,17 @@ class Die():
 
     def roll_die_6(self):
         """Бросок кубика"""
-        roll_6 = random.randint(1, self.sides_6)
+        roll_6 = secure_random.randint(1, self.sides_6)
         print(f'Roll cube 6... and we get... {roll_6}')
 
     def roll_die_10(self):
         """Бросок кубика"""
-        roll_10 = random.randint(1, self.sides_10)
+        roll_10 = secure_random.randint(1, self.sides_10)
         print(f'Roll cube 10... and we get... {roll_10}')
 
     def roll_die_20(self):
         """Бросок кубика"""
-        roll_20 = random.randint(1, self.sides_20)
+        roll_20 = secure_random.randint(1, self.sides_20)
         print(f'Roll cube 20... and we get... {roll_20}')
 
 
@@ -100,7 +102,7 @@ def lottery(arr_elements, win_elements, try_count):
     :return: Результат, статистика.
     """
     for _ in range(0, win_elements):
-        win_list.append(random.choice(element_list[:arr_elements]))
+        win_list.append(secure_random.choice(element_list[:arr_elements]))
 
     print(f'\n{win_list}'
           f'\nSo, if your ticket have that combination you are the WINNER!'
@@ -111,7 +113,8 @@ def lottery(arr_elements, win_elements, try_count):
         while True:
             my_ticket = []
             for _ in range(0, win_elements):
-                my_ticket.append(random.choice(element_list[:arr_elements]))
+                my_ticket.append(secure_random.choice
+                                 (element_list[:arr_elements]))
             counter += 1
             if my_ticket == win_list:
                 break

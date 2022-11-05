@@ -27,13 +27,19 @@ v
 FEDUCATION/GeekBrains/introduction_course/Primitive_Games/game_numba.py,7\3\73d6d1762e8767efe358f6c2696eb6a6b7b95e9c
 `
 0EDUCATION/GeekBrains/first_quarter/webinar_06.py,e\9\e9b712bb7fb9223e1f4c47c128183ae0c522f8fd
-[
-+EDUCATION/Eric_Matthes_Book/task_classes.py,3\1\31e3dd52c5e00fc0d04677cbd6305f773f3dd682
 j
 :EDUCATION/Eric_Matthes_Book/work_with_files/file_reader.py,4\e\4ed00dfc695bb68afabadefe8238dfea6c3f359f
 i
 9EDUCATION/Eric_Matthes_Book/education_files/pi_digits.txt,8\3\832a0d49a3783b4e86decd2adcdc5a29ab116f41
-a
-1EDUCATION/Eric_Matthes_Book/tasks_dictionaries.py,f\6\f64729b11368c68be922de847001e8df34170161
-Y
-)EDUCATION/Eric_Matthes_Book/task_files.py,c\4\c4d4533c4ea326a1f486be286029e95ccffcf13e
+s
+CEDUCATION/Eric_Matthes_Book/education_files/education_some_info.txt,8\9\893eea8dd37ae08742a3b4d2ed691ba14aa15e26
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+j
+:EDUCATION/Eric_Matthes_Book/education_files/for_testing.py,5\a\5a18e396b26ece88300b19e002d3237f9e2f5534
+F
+EDUCATION/poligon_1.py,f\9\f97308764e6caceb3129a23db61a70dc10c93385
+F
+EDUCATION/poligon_2.py,e\9\e9237024e96cc1e05d7b2adbcdd17288c5998400
+N
+EDUCATION/performance_timer.py,a\8\a83918176f9cf7ddaec26cdc6b6af775a86e1584
