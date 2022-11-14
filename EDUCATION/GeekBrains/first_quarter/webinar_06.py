@@ -23,7 +23,7 @@ import re
 # Примечания: спамер — это клиент, отправивший больше всех запросов.
 
 # Заметки: Что бы возвращать цельное значение в кортеже используй ("str",)
-path_to_file = 'C:/Users/FXR-34/Desktop/nginx_logs.txt'
+path_to_file = ''
 ip = []
 with open(path_to_file, 'r', encoding='utf-8') as work_file:
     for line in work_file:
