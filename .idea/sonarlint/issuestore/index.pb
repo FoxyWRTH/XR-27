@@ -101,3 +101,5 @@ w
 G.idea/sonarlint/issuestore/8/9/893eea8dd37ae08742a3b4d2ed691ba14aa15e26,5\e\5e9759b861c1a59aa8596b9ce9b5d00c154eb780
 S
 #EDUCATION/GeekBrains/notes_hints.py,f\8\f8b6f5f097f53df94cf58fa0ff3f96d8a033be8b
+`
+0EDUCATION/GeekBrains/first_quarter/webinar_06.py,e\9\e9b712bb7fb9223e1f4c47c128183ae0c522f8fd
