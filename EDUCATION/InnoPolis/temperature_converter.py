@@ -11,7 +11,7 @@ def temperature_converter():
     try:
         temper = float(input('Введите температуру в цельсиях,'
                              ' используйте только цифровые значения.\n'
-                             'Пример: 23 | 123,3 | 36,6\n'))
+                             'Пример: 23 | 123.3 | 36.6\n'))
     except ValueError:
         return print(
             'Для указания температуры используйте цифровое значение.')
@@ -22,9 +22,10 @@ def temperature_converter():
         return f'Температура по Фаренгейту: {round(result_f, 2)}°F'
     if chose_convert.lower() in ('кельвин', 'kel'):
         result_k = (float(temper)) + 273.15
-        return f'Температура по Кельвину: {round(result_k, 2)}°K'
+        return f'Температура по Кельвину: {round(result_k, 2)}K'
     return 'Укажите в цифровом формате температуру в цельсиях,' \
            ' а так же тип для конвертации.'
 
 
-print(temperature_converter())
+if __name__ == '__main__':
+    print(temperature_converter())
