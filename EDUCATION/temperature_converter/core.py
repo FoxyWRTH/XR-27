@@ -5,8 +5,8 @@
 import os
 import random
 
-import temp_conv_formula as lf
-import temp_conv_text as lt
+import temp_conv_list_formula as lf
+import temp_conv_list_text as lt
 
 
 def random_text():
