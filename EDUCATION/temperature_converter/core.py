@@ -3,16 +3,10 @@
 """
 
 import os
-import random
+import time
 
 import temp_conv_list_formula as lf
 import temp_conv_list_text as lt
-
-
-def random_text():
-    """Вызов случайной фразы"""
-    rnd_sys = random.SystemRandom()
-    return rnd_sys.choice(lt.RND_TEXT)
 
 
 def cls():
@@ -20,44 +14,67 @@ def cls():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
 
+def input_celsius(temperature):
+    """Конвертация Цельсий"""
+    print(f'\nТемпература по Кельвину:'
+          f' {round(lf.celsius_in_kelvin(temperature), 2)}K')
+    print(f'Температура по Фаренгейту:'
+          f' {round(lf.celsius_in_fahrenheit(temperature), 2)}°F')
+
+
+def input_kelvin(temperature):
+    """Конвертация Кельвин"""
+    print(f'\nТемпература по Цельсию:'
+          f' {round(lf.kelvin_in_celsius(temperature), 2)}°C')
+    print(f'Температура по Фаренгейту:'
+          f' {round(lf.kelvin_in_fahrenheit(temperature), 2)}°F')
+
+
+def input_fahrenheit(temperature):
+    """Конвертация Фаренгейт"""
+    print(f'\nТемпература по Цельсию:'
+          f' {round(lf.fahrenheit_in_celsius(temperature), 2)}°C')
+    print(f'Температура по Кельвину:'
+          f' {round(lf.fahrenheit_in_kelvin(temperature), 2)}K')
+
+
+def wrong_answer():
+    """Вывод сообщения при не корректном вводе."""
+    cls()
+    print(lt.WRONG_ANSWER)
+    time.sleep(1)
+    print(lt.random_text(lt.RND_TEXT_WRONG_ANSWER))
+    time.sleep(1)
+
+
 def converter_module():
     """Модуль навигации конвертера"""
     cls()
     while True:
         temperature = 0
-        convert_choice = 0
         print(lt.CONVERTER_MENU)
-        cls()
-        try:
-            convert_choice = int(input('\nЧто конвертируем?\n'))
-        except ValueError:
-            print('Чел, используй цифры.')
-        if convert_choice == 4:
+        convert_choice = input(f'\n{lt.random_text(lt.RND_INPUT_CONVERTER)}\n')
+        if convert_choice == '4':
             cls()
             break
-        if convert_choice not in (1, 2, 3):
-            print(lt.WRONG_ANSWER)
-            print(random_text())
-        if convert_choice in (1, 2, 3):
-            temperature = float(input(lt.INFO_03))
-        if convert_choice == 1:  # Цельсий
+        if convert_choice in ('1', '2', '3'):
             cls()
-            print(f'Температура по Кельвину:'
-                  f' {round(lf.celsius_in_kelvin(temperature), 2)}K')
-            print(f'Температура по Фаренгейту:'
-                  f' {round(lf.celsius_in_fahrenheit(temperature), 2)}°F')
-        if convert_choice == 2:  # Кельвин
+            try:
+                temperature = float(input(lt.INFO_03))
+            except ValueError:
+                wrong_answer()
+                converter_module()
+        if convert_choice == '1':  # Цельсий
             cls()
-            print(f'Температура по Цельсию:'
-                  f' {round(lf.kelvin_in_celsius(temperature), 2)}°C')
-            print(f'Температура по Фаренгейту:'
-                  f' {round(lf.kelvin_in_fahrenheit(temperature), 2)}°F')
-        if convert_choice == 3:  # Фаренгейт
+            input_celsius(temperature)
+        elif convert_choice == '2':  # Кельвин
             cls()
-            print(f'Температура по Цельсию:'
-                  f' {round(lf.fahrenheit_in_celsius(temperature), 2)}°C')
-            print(f'Температура по Кельвину:'
-                  f' {round(lf.fahrenheit_in_kelvin(temperature), 2)}K')
+            input_kelvin(temperature)
+        elif convert_choice == '3':  # Фаренгейт
+            cls()
+            input_fahrenheit(temperature)
+        else:
+            wrong_answer()
 
 
 def info_module():
@@ -65,30 +82,35 @@ def info_module():
     cls()
     while True:
         print(lt.INFORMATION_MENU)
-        sub_choice_01 = int(input('\nЧто-то конкретное?\n'))
-        if sub_choice_01 == 1:
-            cls()
-            print(lt.INFO_01)
-        if sub_choice_01 == 2:
-            cls()
-            print(lt.INFO_02)
-        if sub_choice_01 == 3:
+        sub_choice_01 = input(f'\n{lt.random_text(lt.RND_INPUT_INFO)}\n')
+        if sub_choice_01 == '3':
             cls()
             break
+        if sub_choice_01 == '1':
+            cls()
+            print(lt.INFO_01)
+        elif sub_choice_01 == '2':
+            cls()
+            print(lt.INFO_02)
+        else:
+            wrong_answer()
 
 
 def start_module():
     """Модуль навигации меню"""
+    cls()
     while True:
-        cls()
         print(lt.MAIN_MENU)
-        main_choice_01 = int(input('Приветствую! Что тебя интересует?\n'))
-        if main_choice_01 == 1:
-            info_module()
-        if main_choice_01 == 2:
-            converter_module()
-        if main_choice_01 == 3:
+        main_choice_01 = input(f'{lt.random_text(lt.RND_INPUT_MAIN)}\n')
+        if main_choice_01 == '3':
+            cls()
             break
+        if main_choice_01 == '1':
+            info_module()
+        elif main_choice_01 == '2':
+            converter_module()
+        else:
+            wrong_answer()
 
 
 if __name__ == '__main__':
