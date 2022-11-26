@@ -130,9 +130,6 @@ def lottery(arr_elements, win_elements, try_count):
 
 
 if __name__ == '__main__':
-    cube_6_roll(5)
-    cube_10_roll(5)
-    cube_20_roll(5)
 
     lottery(int(input('Please, enter array. (1-10)\n')),
             int(input('Please enter ticket numbers\n')),

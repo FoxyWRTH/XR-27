@@ -3,64 +3,43 @@
 """
 
 import os
-import list_of_formula as lf
+import random
 
-INFO_01 = '\nДля перемещения по программе используй цифры.\n' \
-          'Целые цифры, не дробные, не выраженные словами.\n' \
-          'Только цифры на клавиатуре.\n'
+import temp_conv_formula as lf
+import temp_conv_text as lt
 
-INFO_02 = 'Некая группа лис.\nОни прячутся в лесу, не отличаются ' \
-          'сообразительностью...\nНо иногда у них что-то получается.'
 
-INFO_03 = ('\n--Примечание--\n'
-           'Существует абсолютный ноль.\nМинимальная возможная температура'
-           ' = 0K (-459.67°F, -273.15°C).\nНиже этого значения температуры'
-           ' не существует.\nПо крайней мере, в нашей Вселенной.\n'
-           '\nСколько градусов?\n')
+def random_text():
+    """Вызов случайной фразы"""
+    rnd_sys = random.SystemRandom()
+    return rnd_sys.choice(lt.RND_TEXT)
 
 
 def cls():
     """Очистка консоли"""
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
-def main_menu():
-    """Основное меню"""
-    return ('\nКонвертер погоды v1.1\n'
-            '\n--Основное меню--\n'
-            '1. Информация.\n'
-            '2. Конвертер.\n'
-            '3. Выход.')
-
-
-def information_menu():
-    """Меню информации"""
-    return ('\n--Меню информации--\n'
-            '1. Как этим пользоваться.\n'
-            '2. Кто тебя создал?\n'
-            '3. Выход.')
-
-
-def converter_menu():
-    """Меню конвертера"""
-    return ('\n--Меню конвертера--\n'
-            '1. Цельсии.\n'
-            '2. Кельвины.\n'
-            '3. Фаренгейты.\n'
-            '4. Выход.')
+    return os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def converter_module():
     """Модуль навигации конвертера"""
     cls()
     while True:
-        print(converter_menu())
-        convert_choice = int(input('\nЧто конвертируем?\n'))
+        temperature = 0
+        convert_choice = 0
+        print(lt.CONVERTER_MENU)
         cls()
+        try:
+            convert_choice = int(input('\nЧто конвертируем?\n'))
+        except ValueError:
+            print('Чел, используй цифры.')
         if convert_choice == 4:
             cls()
             break
-        temperature = float(input(INFO_03))
+        if convert_choice not in (1, 2, 3):
+            print(lt.WRONG_ANSWER)
+            print(random_text())
+        if convert_choice in (1, 2, 3):
+            temperature = float(input(lt.INFO_03))
         if convert_choice == 1:  # Цельсий
             cls()
             print(f'Температура по Кельвину:'
@@ -85,14 +64,14 @@ def info_module():
     """Модуль навигации информации."""
     cls()
     while True:
-        print(information_menu())
+        print(lt.INFORMATION_MENU)
         sub_choice_01 = int(input('\nЧто-то конкретное?\n'))
         if sub_choice_01 == 1:
             cls()
-            print(INFO_01)
+            print(lt.INFO_01)
         if sub_choice_01 == 2:
             cls()
-            print(INFO_02)
+            print(lt.INFO_02)
         if sub_choice_01 == 3:
             cls()
             break
@@ -102,7 +81,7 @@ def start_module():
     """Модуль навигации меню"""
     while True:
         cls()
-        print(main_menu())
+        print(lt.MAIN_MENU)
         main_choice_01 = int(input('Приветствую! Что тебя интересует?\n'))
         if main_choice_01 == 1:
             info_module()
