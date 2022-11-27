@@ -17,11 +17,13 @@ e
 5EDUCATION/Eric_Matthes_Book/class_person_education.py,5\3\53372bcb892fff9937d1b1ccc36cfb8ca6446fca
 a
 1EDUCATION/Eric_Matthes_Book/tasks_dictionaries.py,f\6\f64729b11368c68be922de847001e8df34170161
-Z
-*EDUCATION/FXR_443_Little_Helper/tkn_bot.py,3\c\3cc063dc7ed48fe7b730a4ca4cf30a4aa602fa78
 W
 'EDUCATION/temperature_converter/core.py,c\c\cce147f4b98ee95631c183df9a820a446a01b089
 f
 6EDUCATION/temperature_converter/temp_conv_list_text.py,7\a\7a079975a5afa49c2260624c9a95b5c24fd897d6
 i
 9EDUCATION/temperature_converter/temp_conv_list_formula.py,4\7\4781f4c2db243476d862f7ba0be16731f5cf456c
+f
+6EDUCATION/Temperature_Converter/temp_conv_list_text.py,f\7\f789900115a33eef681e909b88a09ab257e0e56a
+i
+9EDUCATION/Temperature_Converter/temp_conv_list_formula.py,5\5\55ae35dedcdde3661417ce26d1ae5d966f5b78c1
