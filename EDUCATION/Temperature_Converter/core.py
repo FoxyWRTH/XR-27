@@ -3,15 +3,17 @@
 """
 
 import os
+import subprocess
 import time
 
 import temp_conv_list_formula as lf
 import temp_conv_list_text as lt
+import temp_conv_list_event as ev
 
 
 def cls():
     """Очистка консоли"""
-    return os.system('cls' if os.name == 'nt' else 'clear')
+    return subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
 
 
 def input_celsius(temperature):
@@ -45,6 +47,9 @@ def wrong_answer():
     time.sleep(1)
     print(lt.random_text(lt.RND_TEXT_WRONG_ANSWER))
     time.sleep(1)
+    ev.rnd_wrong_answer()
+    time.sleep(1)
+    cls()
 
 
 def converter_module():
