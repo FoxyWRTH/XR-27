@@ -37,15 +37,34 @@ if __name__ == '__main__':
     automat_1 = Unit773('U773', 'U773_0101', 'Little Killer')
     automat_2 = Unit774('U774', 'U774_0102', 'Sub Killer')
 
-    print(automat_1.can_run)
-    print(automat_1.can_walk)
+    print('\nInitialize automat - 1')
+    print(f'Automat - 1, can you walk? - {automat_1.can_walk}\n'
+          f'Automat - 1, can you run? - {automat_1.can_run}')
 
+    print('\nOk, press "F" to activating... ')
     automat_1.activate_bot()
 
-    print(automat_1.can_run)
-    print(automat_1.can_walk)
+    print(f'Automat - 1, can you walk? - {automat_1.can_walk}\n'
+          f'Automat - 1, can you run? - {automat_1.can_run}')
 
+    print('\nOk, press "D" to deactivating... ')
     automat_1.deactivate_bot()
 
-    print(automat_1.can_run)
-    print(automat_1.can_walk)
+    print(f'Automat - 1, can you walk? - {automat_1.can_walk}\n'
+          f'Automat - 1, can you run? - {automat_1.can_run}')
+
+    print('\nInitialize automat - 2')
+    print(f'Automat - 2, can you walk? - {automat_2.can_walk}\n'
+          f'Automat - 2, can you run? - {automat_2.can_run}')
+
+    print('\nOk, press "F" to activating... ')
+    automat_2.activate_bot()
+
+    print(f'Automat - 2, can you walk? - {automat_2.can_walk}\n'
+          f'Automat - 2, can you run? - {automat_2.can_run}')
+
+    print('\nOk, press "D" to deactivating... ')
+    automat_2.deactivate_bot()
+
+    print(f'Automat - 2, can you walk? - {automat_2.can_walk}\n'
+          f'Automat - 2, can you run? - {automat_2.can_run}')
